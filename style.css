@@ -1,0 +1,109 @@
+:root {
+    background-color: #ecf5ff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+body {
+    background-color: #ecf5ff;
+    margin: auto;
+    padding: auto;
+    text-align: center;
+}
+
+footer {
+    color: rgb(58, 14, 219);
+    font-size: 1.5rem;
+    padding: 0.5rem;
+}
+
+h1 {
+    color: rgb(58, 14, 219);
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin: 0.5rem;
+}
+
+h2 {
+    color: black;
+    font-weight: 600;
+    margin: 0.5rem;
+}
+
+h3 {
+    color: blue;
+}
+
+label {
+    color: rgb(110, 19, 122);
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0.5rem;
+}
+
+p {
+    color: rgb(117, 0, 128);
+    font-size: 1.5rem;
+    margin: 0.5rem;
+}
+
+.container {
+    width: 100vw;
+    height: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.hide {
+    display: none;
+}
+
+#card1, #card2 {
+    background-color: rgb(217, 214, 255);
+    margin: auto;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    padding: auto;
+    width: 80%;
+}
+
+#initialsBox {
+    background-color: rgb(217, 214, 255);
+    border-color: purple;
+    height: 2rem;
+    font-size: 2rem;
+    text-align: center;
+    width: 10rem;
+}
+
+#scoreBtn {
+    background-color: cornsilk;
+    cursor: auto;
+    box-shadow: none;
+}
+
+.btn {
+    background-color: royalblue;
+    font-size: 1.7rem;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.btn:hover {
+    cursor: pointer;
+    box-shadow: 0 0.5rem 0.5rem 0 rgb(58, 14, 219);
+}
+
+.btn[disabled]:hover {
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
