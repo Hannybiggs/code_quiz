@@ -1,24 +1,141 @@
 <!-- utilizing starter template for Bootstrap -->
+<!-- Ultimately didn't use much Bootstrap -->
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>04 - Code Quiz </title>
-  </head>
-  <body>
-    <h1>Code Quiz</h1>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css">
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+  <title>04 - Code Quiz </title>
+</head>
+
+
+
+<body>
+  <h1>Coding Quiz Challenge</h1>
+
+  <!-- Starting page -->
+  <div class="start">
+    <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers
+      will penalize your time by 10 seconds!</p>
+    <button id="startBtn" type="button" class="btn btn-success">Start Quiz</button>
+  </div>
+
+
+
+  <main class="main">
+
+    <!--Quiz content-->
+    <div id="gameCard" class="w3-container hide">
+
+      <h2 class="timer">TIMER: </h2>
+
+      <div id="card1" class="w3-card-4">
+
+        <header class="w3-container w3-light-grey">
+          <h3 id="title">Question Goes HERE!</h3>
+        </header>
+
+        <hr style="margin-top:0; border-color:transparent;">
+
+        <div id="multipleChoiceCard" class="w3-container">
+          <div class="questionLine">
+            <label id="choiceA"></label>
+          </div>
+          <hr>
+
+          <div class="questionLine">
+            <label id="choiceB"></label>
+          </div>
+          <hr>
+
+          <div class="questionLine">
+            <label id="choiceC"></label>
+          </div>
+          <hr>
+
+          <div class="questionLine">
+            <label id="choiceD"></label>
+          </div>
+
+        </div>
+
+        <footer id="response1" class="w3-block w3-dark-grey">Can you answer all the questions in time?</footer>
+
+      </div>
+    </div>
+
+    <button id="highScoreBtn" type="button" class="btn btn-success">View High Scores</button>
+
+
+
+
+
+
+    <!--Player high score input-->
+    <div id="scoreForm" class="w3-container hide">
+
+      <h1>!! GAME OVER !!</h1>
+
+      <h2>You scored <span id="scoreBtn" class="btn">Score</span> points</h2>
+      <form>
+        <label for="nameBox">Enter Your Name:</label><br>
+        <input id="nameBox" type="text" maxlength="15"><br>
+        <button id="submitBtn" type="button" class="btn btn-success">Submit</button>
+      </form>
+
+    </div>
+
+
+
+
+
+    <!-- Player high score results page -->
+    <div id="scoreCard" class="w3-container hide">
+
+      <div id="card2" class="w3-card-4">
+
+        <header class="w3-container w3-light-grey">
+          <h1>Top 10 High Scores</h1>
+        </header>
+
+        <hr style="margin-top:0; border-color:transparent;">
+        <div id="leaderBoard" class="w3-container" style="min-height: 275px"></div>
+
+        <hr style="margin-top:0; border-color:transparent;">
+        <footer id="response2" class="w3-block w3-dark-grey">Thanks for playing!</footer>
+      </div>
+
+      <button id="backBtn" type="button" class="btn btn-warning">Back</button>
+      <button id="clearBtn" type="button" class="btn btn-danger">Clear</button>
+
+    </div>
+
+  </main>
+
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+
 </html>
